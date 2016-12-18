@@ -27,7 +27,7 @@ adversarial_validation = function(train, test){
   train_ordered <- order(modified_train['Predicted_TARGET'], decreasing=TRUE)
   validation_train_index <- train_ordered[1:(length(train_ordered)*.2)]
   train_index <- train_ordered[((length(train_ordered)*.2)+1):length(train_ordered)]
-  list(modified_train[train_index, ], modified_train[validation_train_index, ])
+  list(train[train_index, ], train[validation_train_index, ])
 }
 
 
